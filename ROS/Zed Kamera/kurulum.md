@@ -14,7 +14,7 @@ Komutu ile ZED SDK paketi kurulumuna başlanır.
 
 # ZED için Ros çalışma dizini oluşturma
 	mkdir ~/zed
-	cd zed
+	cd ~/zed
 	mkdir src
 	cd src
 	git clone https://github.com/stereolabs/zed-ros-wrapper.git
