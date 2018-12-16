@@ -1,4 +1,4 @@
-# ROS KURULUM
+# ROS KİNETİC KURULUM
 
 	sudo apt-get update
 	sudo apt-get upgrade
