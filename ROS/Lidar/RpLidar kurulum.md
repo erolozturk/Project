@@ -14,3 +14,7 @@ rplidar çalışma dizinini her terminal açılışında source yapmamak isterse
 Açılan dosyanın alt satırına aşağıdaki satırın eklenmesi gerekir
 
 	source /home/[kullanıcı ismi]/rplidar/devel/setup.bash
+	
+Eğer lidarı çalıştırırken port hatası verirse aşağıdaki satır ile porta yetki verebilirsiniz
+	
+	sudo chmod 777 /dev/ttyUSB0 
