@@ -19,7 +19,5 @@ def zed_callback(data):
 if __name__ == '__main__':
 	rospy.init_node('zed_odom', anonymous=True)
 	rospy.Subscriber('/zed/odom',Odometry,zed_callback,queue_size=1)
-	while not rospy.is_shutdown(): 
-		pass
 	rospy.spin()
 
