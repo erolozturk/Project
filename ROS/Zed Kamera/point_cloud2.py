@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-#roslaunch openni_launch openni.launch
+#roslaunch zed_wrapper zed.launch
 #points 1280*720=921600 elemanli bir listedir
 
 from __future__ import print_function
