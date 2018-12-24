@@ -1,0 +1,40 @@
+tensorflow versiyon 1.9.0
+cuda versiyon 9.0
+cudnn version 7.1.4 + cuda 9.0
+keras version ?
+
+
+1  Protoc 3.6 linux ürümü indirilip inen dosya icerisindeki bin klasöründe bulunan protoc isimli dosya 
+   /usr/local/bin dizine kopyalanmalı ve dosya çalıştırılabilir yapılmalı. 
+2  Desktop/models/research  dizininde aşağıdaki komutları çalıştır
+
+	protoc object_detection/protos/*.proto --python_out=.
+	export PYTHONPATH=$PYTHONPATH:`pwd`:`pwd`/slim
+	sudo python3 setup.py install
+	
+3  Data oluşturma ve resim etiketleme
+
+4  xml_to_csv.py kodu ile csv dosyası oluşturma
+
+5  csv dosyaları ile record dosyaları oluşturma
+
+    python3 generate_tfrecord.py --csv_input=data/train_labels.csv --output_path=data/train.record
+    python3 generate_tfrecord.py --csv_input=data/test_labels.csv --output_path=data/test.record
+
+6  labelmap.pbtxt dosyası ve kullanılan modeln config dosyası oluşturma
+
+7  Eğitime başlama
+
+    python3 train.py --logtostderr --train_dir=training/ --pipeline_config_path=training/ssd_mobilenet_v2_coco.config
+
+8  Model dosyası oluşturma
+
+python3 export_inference_graph.py \
+    --input_type image_tensor \
+    --pipeline_config_path training/ssd_mobilenet_v1_pets.config \
+    --trained_checkpoint_prefix training/model.ckpt-92977 \
+    --output_directory traffic_inference_graph
+
+
+9 Eğitim sırasında bu kodu yeni terminalde çalıştırıp verilen bağlantıyı açarak hata değerleri izlenebilir
+tensorboard --logdir='training'
