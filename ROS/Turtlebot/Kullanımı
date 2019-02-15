@@ -9,7 +9,7 @@
   roslaunch turtlebot_teleop logitech.launch                              #logitech joystick ile robot hareketi
   
   
-# Gerçek robot
+# Gerçek Robot
 
   roslaunch turtlebot_bringup minimal.launch      #robotu çalıştırır
   export TURTLEBOT_3D_SENSOR=kinect               #kullanılan sensör olarak kinect seçildi
