@@ -1,0 +1,19 @@
+** Simulasyon
+  
+  roslaunch turtlebot_gazebo turtlebot_world.launch                       #Robotu gazebo ortamında açar
+  roslaunch turtlebot_gazebo gmapping_demo.launch                         #gmapping
+  roslaunch turtlebot_rviz_launchers view_navigation.launch               #rviz ortamı açılması
+  rosrun map_server map_saver -f test_map                                 #harita kaydedilmesi
+  roslaunch turtlebot_gazebo amcl_demo.launch map_file:=~/test_map.yaml   #harita üzerinde konumlandırma
+  roslaunch turtlebot_teleop keyboard_teleop.launch                       #kumanda ile robot hareketi
+  roslaunch turtlebot_teleop logitech.launch                              #logitech joystick ile robot hareketi
+  
+  
+** Gerçek robot
+
+  roslaunch turtlebot_bringup minimal.launch      #robotu çalıştırır
+  export TURTLEBOT_3D_SENSOR=kinect               #kullanılan sensör olarak kinect seçildi
+  export TURTLEBOT_3D_SENSOR=asus_xtion_pro       #kullanılan sensör olarak asus_xtion_pro seçildi
+  roslaunch freenect_launch freenect.launch       #kinect için freenect sürücüsünü çalıştırır
+  roslaunch openni_launch openni.launch           #kinect için openni sürücüsünü çalıştırır
+  roslaunch openni2_launch openni2.launch         #kinect için openni2 sürücüsünü çalıştırır
