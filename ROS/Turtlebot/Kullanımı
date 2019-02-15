@@ -1,4 +1,4 @@
-** Simulasyon
+# Simulasyon
   
   roslaunch turtlebot_gazebo turtlebot_world.launch                       #Robotu gazebo ortamında açar
   roslaunch turtlebot_gazebo gmapping_demo.launch                         #gmapping
@@ -9,7 +9,7 @@
   roslaunch turtlebot_teleop logitech.launch                              #logitech joystick ile robot hareketi
   
   
-** Gerçek robot
+# Gerçek robot
 
   roslaunch turtlebot_bringup minimal.launch      #robotu çalıştırır
   export TURTLEBOT_3D_SENSOR=kinect               #kullanılan sensör olarak kinect seçildi
